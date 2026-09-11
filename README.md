@@ -11,16 +11,7 @@ El Frontend no contiene textos quemados ni lógica de dominio acoplada. Sigue ri
 
 ---
 
-## 👥 Equipo y Distribución de Roles
 
-| Integrante | Rol Oficial | Entregable Clave | Fecha Límite |
-|---|---|---|---|
-| **Erika** | Líder de Investigación y Contenidos | Investigación Unidad 4 + `data.json` | Viernes 11:59 PM |
-| **Andrey** | Ingeniero de Backend y APIs | Servidor Spring Boot + Endpoints REST | Sábado 4:00 PM |
-| **Miguel** | Ingeniero de Frontend y UX | Interfaz interactiva, responsiva y SSOT | Domingo 2:00 PM |
-| **Sergio García S.** | QA, DevOps y Despliegue Cloud | Despliegue en Vercel/Render + Pruebas QA | Lunes 9:00 AM |
-
----
 
 ## 💻 Instalación y Ejecución Local
 
@@ -43,3 +34,4 @@ npm run build
 - `GET /api/metodologias/:id`: Detalle extendido, fases del ciclo de vida y roles.
 - `GET /api/comparativa`: Criterios técnicos de comparación entre modelos predictivos y adaptativos.
 - `GET /api/equipo`: Créditos dinámicos de los 4 integrantes del equipo.
+- `POST /api/recomendar`: Algoritmo de recomendación adaptativa de metodologías según requerimientos del proyecto.
