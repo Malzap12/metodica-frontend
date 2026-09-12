@@ -30,8 +30,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <>
-      {/* Top Header: Desktop & Mobile (Apple Frosted Glass Standard) */}
-      <header className="sticky top-0 z-40 w-full border-b border-black/[0.06] dark:border-white/[0.08] bg-white/75 dark:bg-black/70 backdrop-blur-2xl transition-colors">
+      {/* Top Header: Desktop & Mobile (Apple Frosted Glass Standard with Safe Area) */}
+      <header className="sticky top-0 z-40 w-full border-b border-black/[0.06] dark:border-white/[0.08] bg-white/80 dark:bg-black/80 backdrop-blur-2xl transition-colors pt-[env(safe-area-inset-top,0px)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
           
           {/* Logo & Platform Label */}
@@ -108,8 +108,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </header>
 
-      {/* Mobile Bottom Ergonomic Navigation Bar (Apple Dock style) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/80 dark:bg-black/80 border-t border-black/[0.06] dark:border-white/[0.08] backdrop-blur-2xl px-3 py-2 flex items-center justify-around touch-manipulation">
+      {/* Mobile Bottom Ergonomic Navigation Bar (Apple Dock style with Safe Area) */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-black/90 border-t border-black/[0.06] dark:border-white/[0.08] backdrop-blur-2xl px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] flex items-center justify-around touch-manipulation">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
