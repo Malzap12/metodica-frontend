@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          {/* API Health & Architecture Indicator */}
+          {/* Status Indicator */}
           <div className="flex items-center gap-3">
             <div 
               className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs border transition-all duration-200 ${
@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   ? 'bg-emerald-500/[0.08] border-emerald-500/25 text-emerald-600 dark:text-emerald-300' 
                   : 'bg-black/[0.04] dark:bg-[#1c1c1e] border-black/[0.06] dark:border-white/[0.08] text-[#86868b]'
               }`}
-              title={apiOnline ? `API REST conectada (${latencyMs}ms)` : 'Modo estructurado local (SSOT)'}
+              title={apiOnline ? `Servidor en línea (${latencyMs}ms)` : 'Servidor local'}
             >
               <span className="relative flex h-1.5 w-1.5">
                 {apiOnline && (
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </span>
               
               <span className="text-[11px] font-medium tracking-tight">
-                {apiOnline ? `API ${latencyMs}ms` : 'SSOT Mock'}
+                {apiOnline ? 'En línea' : 'Local'}
               </span>
 
               <button

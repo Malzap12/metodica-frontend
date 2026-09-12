@@ -5,7 +5,7 @@ import { Metodologia, MetodologiaTipo } from '../types';
 interface MethodologiesExplorerProps {
   metodologias: Metodologia[];
   isLoading: boolean;
-  dataSource: 'backend-api' | 'mock-fallback';
+  dataSource?: 'backend-api' | 'mock-fallback';
   onSelectMetodologia: (metodologia: Metodologia) => void;
   onRetry: () => void;
 }
@@ -13,7 +13,6 @@ interface MethodologiesExplorerProps {
 export const MethodologiesExplorer: React.FC<MethodologiesExplorerProps> = ({
   metodologias,
   isLoading,
-  dataSource,
   onSelectMetodologia,
   onRetry
 }) => {
@@ -45,18 +44,6 @@ export const MethodologiesExplorer: React.FC<MethodologiesExplorerProps> = ({
           <p className="text-[#86868b] text-sm sm:text-base mt-2 max-w-xl">
             Análisis comparativo de paradigmas: modelos predictivos orientados a control y gobernanza vs. marcos adaptativos iterativos centrados en el valor continuo.
           </p>
-        </div>
-
-        {/* Data Source Badge */}
-        <div className="flex items-center gap-2 self-start md:self-auto text-xs">
-          <span className="text-[#86868b]">Fuente de datos:</span>
-          <span className={`px-2.5 py-1 rounded-md border font-medium ${
-            dataSource === 'backend-api' 
-              ? 'bg-emerald-500/[0.08] border-emerald-500/25 text-emerald-600 dark:text-emerald-300' 
-              : 'bg-black/[0.04] dark:bg-white/[0.03] border-black/[0.06] dark:border-white/[0.06] text-[#86868b]'
-          }`}>
-            {dataSource === 'backend-api' ? 'REST API (/api/metodologias)' : 'SSOT Mock Schema'}
-          </span>
         </div>
       </div>
 
