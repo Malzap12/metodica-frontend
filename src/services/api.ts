@@ -2,10 +2,12 @@ import { Metodologia, CriterioComparativa, MiembroEquipo, ApiResponse } from '..
 import { MOCK_METODOLOGIAS, MOCK_COMPARATIVA, MOCK_EQUIPO } from '../data/mockData';
 
 // Configuración de la URL base del Backend
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000';
+export const API_BASE_URL = 
+  import.meta.env.VITE_API_BASE_URL || 
+  (import.meta.env.PROD ? 'https://metodologias-backend.onrender.com' : 'http://localhost:4000');
 
-// Timeout para evitar que la interfaz se quede colgada esperando al servidor
-const REQUEST_TIMEOUT_MS = 2500;
+// Timeout para permitir conexiones móviles / cloud sin bloquear la interfaz
+const REQUEST_TIMEOUT_MS = 6000;
 
 interface FetchOptions extends RequestInit {
   timeout?: number;
@@ -45,7 +47,7 @@ export async function checkBackendStatus(): Promise<{ online: boolean; latencyMs
   try {
     const res = await fetchWithTimeout(`${API_BASE_URL}/api/metodologias`, {
       method: 'GET',
-      timeout: 2000
+      timeout: 5000
     });
     const latencyMs = Math.round(performance.now() - start);
     return { online: res.ok, latencyMs };
