@@ -2,7 +2,7 @@ import { Metodologia, CriterioComparativa, MiembroEquipo, ApiResponse } from '..
 import { MOCK_METODOLOGIAS, MOCK_COMPARATIVA, MOCK_EQUIPO } from '../data/mockData';
 
 // Configuración de la URL base del Backend
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000';
 
 // Timeout para evitar que la interfaz se quede colgada esperando al servidor
 const REQUEST_TIMEOUT_MS = 2500;
@@ -67,7 +67,7 @@ export async function fetchMetodologias(): Promise<ApiResponse<Metodologia[]>> {
       data: Array.isArray(data) ? data : (data.data || MOCK_METODOLOGIAS),
       source: 'backend-api',
       timestamp: new Date().toISOString(),
-      message: 'Datos servidos en vivo desde el Backend Spring Boot'
+      message: 'Datos servidos en vivo desde el Backend API (Single Source of Truth)'
     };
   } catch (error) {
     // Fallback silencioso y controlado
