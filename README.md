@@ -2,7 +2,7 @@
 
 Plataforma frontend de vanguardia construida con **React, TypeScript, Tailwind CSS y Vite**, orientada a la sustentación académica de la **Unidad 4** bajo modalidad Shark Tank.
 
-## 🚀 Arquitectura: Single Source of Truth (SSOT)
+##  Arquitectura: Single Source of Truth (SSOT)
 
 El Frontend no contiene textos quemados ni lógica de dominio acoplada. Sigue rigurosamente el principio de separación de responsabilidades:
 - **Backend First**: Realiza peticiones automáticas hacia `/api/metodologias`, `/api/metodologias/:id` y `/api/equipo`.
@@ -13,7 +13,7 @@ El Frontend no contiene textos quemados ni lógica de dominio acoplada. Sigue ri
 
 
 
-## 💻 Instalación y Ejecución Local
+##  Instalación y Ejecución Local
 
 ```bash
 # 1. Instalar dependencias
@@ -28,7 +28,7 @@ npm run build
 
 ---
 
-## 🌐 Endpoints que consume el Frontend
+##  Endpoints que consume el Frontend
 
 - `GET /api/metodologias`: Lista completa de metodologías (Scrum, Cascada, XP, Kanban, Modelo V).
 - `GET /api/metodologias/:id`: Detalle extendido, fases del ciclo de vida y roles.
