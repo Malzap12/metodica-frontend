@@ -4,10 +4,10 @@ import { MiembroEquipo } from '../types';
 
 interface TeamSectionProps {
   equipo: MiembroEquipo[];
-  dataSource: 'backend-api' | 'mock-fallback';
+  dataSource?: 'backend-api' | 'mock-fallback';
 }
 
-export const TeamSection: React.FC<TeamSectionProps> = ({ equipo, dataSource }) => {
+export const TeamSection: React.FC<TeamSectionProps> = ({ equipo }) => {
   const getRoleIcon = (index: number) => {
     switch (index) {
       case 0: return <BookOpen className="w-5 h-5 text-[#86868b] dark:text-[#a1a1a6]" />;
@@ -33,14 +33,6 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ equipo, dataSource }) 
           <p className="text-[#86868b] text-sm sm:text-base mt-2 max-w-2xl">
             Especialización modular bajo un pipeline continuo de entrega: dominio conceptual, arquitectura backend REST, experiencia frontend reactiva y gobernanza cloud.
           </p>
-        </div>
-
-        {/* Data Source Badge */}
-        <div className="flex items-center gap-2 self-start md:self-auto text-xs">
-          <span className="text-[#86868b]">Endpoint:</span>
-          <span className="px-2.5 py-1 rounded-md bg-black/[0.04] dark:bg-white/[0.03] border border-black/[0.06] dark:border-white/[0.06] text-[#1d1d1f] dark:text-white font-mono text-[11px]">
-            /api/equipo {dataSource === 'backend-api' ? '(Live)' : '(Mock)'}
-          </span>
         </div>
       </div>
 
